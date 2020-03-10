@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: skaffold-angular-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 4200
+      targetPort: 4200
+  selector:
+    app: skaffold-angular
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skaffold-angular-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skaffold-angular
+  template:
+    metadata:
+      labels:
+        app: skaffold-angular
+    spec:
+      imagePullSecrets:
+        - name: registry-secret
+      containers:
+        - name: skaffold-angular
+          image: registry.gitlab.com/svtslv/skaffold-nestjs-angular/dev-skaffold-angular
+          ports:
+            - containerPort: 4200

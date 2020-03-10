@@ -1,0 +1,33 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: dev-skaffold-nestjs-angular
+build:
+  local:
+    push: false
+  artifacts:
+    - image: registry.gitlab.com/svtslv/skaffold-nestjs-angular/dev-skaffold-nestjs
+      context: ../skaffold-nestjs
+      docker:
+        dockerfile: dev.Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.*'
+            dest: .
+    - image: registry.gitlab.com/svtslv/skaffold-nestjs-angular/dev-skaffold-angular
+      context: ../skaffold-angular
+      docker:
+        dockerfile: dev.Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.*'
+            dest: .
+deploy:
+  kubeContext: docker-desktop
+  kubectl:
+    flags:
+      global: [--namespace=skaffold-nestjs-angular-namespace]
+    manifests:
+      - ./_secrets-example.yaml
+      - ./nestjs-deployment.yaml
+      - ./angular-deployment.yaml

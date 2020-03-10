@@ -1,0 +1,7 @@
+.env
+*.env
+*.env*
+.git
+.idea
+dist
+node_modules
