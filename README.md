@@ -1,6 +1,6 @@
 # Skaffold NestJS Angular
 
-Skaffold NestJS Angular example with local remote and kaniko configuration
+Skaffold NestJS Angular example with local remote and kaniko configurations
 
 ## How to use
 
