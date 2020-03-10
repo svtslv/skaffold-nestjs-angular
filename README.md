@@ -27,7 +27,7 @@ skaffold dev -f skaffold-local.yaml --port-forward
 Local docker and remote kubernetes
 
 ```
-skaffold dev -f skaffold-remote.yaml --port-forward  --default-repo=registry.gitlab.com/USERNAME/PROJECT
+skaffold dev -f skaffold-remote.yaml --port-forward --default-repo=registry.gitlab.com/USERNAME/PROJECT
 ```
 
 ### Skaffold Kaniko
@@ -38,7 +38,7 @@ Remote builder and remote kubernetes
 2. Update build.cluster.dockerConfig.path -> skaffold-kubernetes/skaffold-kaniko.yaml
 
 ```
-skaffold dev -f skaffold-kaniko.yaml --port-forward  --default-repo=registry.gitlab.com/USERNAME/PROJECT
+skaffold dev -f skaffold-kaniko.yaml --port-forward --default-repo=registry.gitlab.com/USERNAME/PROJECT
 ```
 
 ## Generate auth from username and password
