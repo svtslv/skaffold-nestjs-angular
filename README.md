@@ -14,6 +14,8 @@ cd skaffold-nestjs-angular/skaffold-kubernetes
 kubectl create ns skaffold-nestjs-angular-namespace
 ```
 
+Update `deploy.kubeContext` -> `skaffold-kubernetes/skaffold-(local|remote|kaniko).yaml`
+
 ### Skaffold Local
 
 Local docker and local kubernetes
