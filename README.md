@@ -26,6 +26,8 @@ Local docker and local kubernetes
 skaffold dev -f skaffold-local.yaml --port-forward
 ```
 
+Open the browser on `http://localhost:3000` and `http://localhost:4200` change the code and enjoy. Angular will be reload automatically.
+
 ### Skaffold Remote
 
 Local docker and remote kubernetes
