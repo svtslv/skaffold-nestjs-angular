@@ -49,7 +49,7 @@ skaffold dev \
 --default-repo=registry.gitlab.com/USERNAME/PROJECT
 ```
 
-## Generate auth from username and password
+### Generate auth from username and password
 
 ```sh
 echo -n 'username:password' | base64
